@@ -15,8 +15,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "CRIV. Agency",
-  description: "Impact Digital Real",
+  title: "CRIV. | Agencia de Impacto Digital",
+  description: "Diseño Web, Branding y Estrategia para marcas que desafían lo convencional.",
+  keywords: ["Agencia Marketing", "Diseño Web", "Branding", "Next.js"],
 };
 
 export default function RootLayout({

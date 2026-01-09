@@ -13,9 +13,9 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="font-display text-[13vw] md:text-[11rem] leading-[0.85] font-black uppercase tracking-tighter text-white text-center"
         >
-          IMPACT <br />
+          IMPACTO <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-criv-peach to-criv-lightpink">DIGITAL</span> <br />
-          REAL<span className="text-criv-blue">.</span>
+          REAL<span className="text-criv-blue"></span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0 }}
