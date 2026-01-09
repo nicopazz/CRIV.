@@ -60,7 +60,7 @@ export default function Navbar() {
             <Link onClick={toggleMenu} href="#proyectos" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-pink">
               Proyectos
             </Link>
-            <Link onClick={toggleMenu} href="#contacto" className="text-3xl font-display font-bold text-criv-blue uppercase">
+            <Link onClick={toggleMenu} href="#contacto" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-blue">
               Contacto
             </Link>
           </motion.div>

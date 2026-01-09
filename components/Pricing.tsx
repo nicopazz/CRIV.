@@ -8,7 +8,6 @@ const plans = [
     price: "399",
     description: "Para marcas que inician.",
     features: ["10 Posteos Mensuales", "Estrategia Básica", "Reporte de Métricas"],
-    // Configuración de estilo propia
     color: "text-criv-blue",
     borderColor: "border-criv-blue",
     shadow: "shadow-[0_0_40px_rgba(59,130,246,0.15)]",
@@ -69,7 +68,7 @@ export default function Pricing() {
               
               {plan.name === "Growth" && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-criv-yellow text-black text-xs font-bold uppercase tracking-widest rounded-full flex items-center gap-2 z-20">
-                  <Sparkles className="w-3 h-3" /> Best Seller
+                  <Sparkles className="w-3 h-3" /> Mas conveniente
                 </div>
               )}
               

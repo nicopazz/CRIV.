@@ -37,7 +37,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-4xl sm:text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter mb-4"
           >
-            Hablemos<span className="text-criv-blue">.</span>
+            Hablemos<span className="text-criv-blue"></span>
           </motion.h2>
           <p className="text-lg md:text-xl text-gray-400 font-body px-4">
             Contacto directo. Sin formularios de espera.
