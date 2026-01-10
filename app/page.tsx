@@ -9,7 +9,7 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Preloader from "@/components/Preloader"; // <--- Importamos el Preloader
+import Preloader from "@/components/Preloader"; 
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +29,7 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
 
-      {/* El contenido se muestra pero queda debajo del Preloader hasta que este sube */}
+      
       {!isLoading && (
         <>
           <Navbar />

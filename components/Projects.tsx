@@ -90,7 +90,7 @@ export default function Projects() {
               transition={{ duration: 0.6 }}
               className={`group relative flex flex-col gap-4 ${project.size}`}
             >
-              {/* ENVOLVEMOS TODO EN UN ENLACE 'A' */}
+              
               <a
                 href={project.link}
                 target="_blank"

@@ -9,21 +9,20 @@ export default function Contact() {
 
   const interests = ["Branding", "Web Dev", "Social Media", "Estrategia 360", "Ads / Paid Media"];
 
-  // ⚠️ IMPORTANTE: PON TU NÚMERO AQUÍ (Código país + Número)
-  // Ejemplo Argentina: 549 + código de área + número (sin el 15 si es celular)
+
   const phoneNumber = "5493816382279"; 
 
   const handleWhatsAppClick = () => {
-    // Creamos el mensaje personalizado
+    
     const interestText = selectedInterest ? `estoy interesado en *${selectedInterest}*` : "quería consultar sobre sus servicios";
     const nameText = name ? `Soy *${name}* y` : "Hola,";
     
     const message = `${nameText} ${interestText}. Me gustaría recibir más información.`;
     
-    // Generamos el link oficial de WhatsApp API
+    
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
-    // Abrimos en nueva pestaña
+    
     window.open(url, '_blank');
   };
 

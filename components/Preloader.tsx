@@ -6,7 +6,7 @@ export default function Preloader() {
     initial: { y: "0%" },
     exit: { 
       y: "-100%", 
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } // Duración de 1s para más dramatismo
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } 
     }
   };
 

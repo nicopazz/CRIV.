@@ -1,8 +1,8 @@
-"use client"; // Importante: Ahora necesitamos estado para abrir/cerrar menú
+"use client"; 
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react"; // Iconos para el menú
+import { Menu, X } from "lucide-react"; 
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -45,7 +45,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Botón Hamburguesa (Solo móvil) */}
+        {/* Botón Hamburguesa*/}
         <button onClick={toggleMenu} className="md:hidden z-50 text-white">
           {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
