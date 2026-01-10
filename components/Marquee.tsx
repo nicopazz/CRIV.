@@ -16,7 +16,7 @@ export default function Marquee() {
         className="flex whitespace-nowrap"
         
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+        transition={{ ease: "linear", duration: 40, repeat: Infinity }}
       >
         
         {[...Array(8)].map((_, i) => (

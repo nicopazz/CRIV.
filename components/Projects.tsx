@@ -9,35 +9,35 @@ const projects = [
     id: 1,
     title: "CYBER CHIC",
     category: "Web3 / Digital Fashion",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop", // Abstracto Azul/Neon
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop", 
     size: "md:col-span-1", // Ocupa 1 columna
   },
   {
     id: 2,
     title: "TERRA BEAN",
     category: "Packaging / Strategy",
-    image: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?q=80&w=1000&auto=format&fit=crop", // Café minimalista
+    image: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?q=80&w=1000&auto=format&fit=crop", 
     size: "md:col-span-1",
   },
   {
     id: 3,
     title: "SONAR FEST",
     category: "Campaign / Visuals",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop", // Evento colorido
-    size: "md:col-span-2", // Ocupa 2 columnas (Destacado ancho)
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop", 
+    size: "md:col-span-2", 
   },
   {
     id: 4,
-    title: "NANA TECH",
+    title: "Esmae",
     category: "App Dev / UI/UX",
-    image: "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?q=80&w=1000&auto=format&fit=crop", // Tecnología 3D
+    image: "/esmae.png", 
     size: "md:col-span-1",
   },
   {
     id: 5,
-    title: "VOGUE",
-    category: "Editorial / Social Media",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop", // Retro Tech
+    title: "RollingVet",
+    category: "App Dev ",
+    image: "/rollingvet.png", 
     size: "md:col-span-1",
   }
 ];

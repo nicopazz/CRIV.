@@ -32,10 +32,16 @@ export default function Navbar() {
             Proyectos
           </Link>
           <Link 
+            href="#faq" 
+            className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-mint"
+          >
+            Preguntas Frecuentes
+          </Link>
+          <Link 
             href="#contacto" 
             className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-blue"
           >
-            HABLEMOS
+            Hablemos
           </Link>
         </div>
 
@@ -59,6 +65,9 @@ export default function Navbar() {
             </Link>
             <Link onClick={toggleMenu} href="#proyectos" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-pink">
               Proyectos
+            </Link>
+             <Link onClick={toggleMenu} href="#faq" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-mint">
+              Dudas
             </Link>
             <Link onClick={toggleMenu} href="#contacto" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-blue">
               Hablemos

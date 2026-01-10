@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Marquee from "@/components/Marquee"; // Asegúrate de tener este componente
+import Marquee from "@/components/Marquee";
 
 export default function Hero() {
   return (
@@ -27,7 +27,7 @@ export default function Hero() {
           </span>
           
           <span className="block text-[12vw] lg:text-[9vw] 2xl:text-[9rem]">
-            REAL<span className="text-criv-yellow"> .</span>
+            REAL
           </span>
         </motion.h1>
 
@@ -36,7 +36,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           
-          className="py-6 md:py-8 mt-4 md:mt-8 text-gray-400 text-sm sm:text-base md:text-xl font-body text-center max-w-xs sm:max-w-lg md:max-w-2xl px-4 leading-relaxed"
+          className="py-6 mt-4 md:mt-6 text-gray-400 text-base sm:text-lg md:text-xl font-body text-center max-w-xs sm:max-w-lg md:max-w-2xl px-4 leading-relaxed"
         >
           Somos CRIV. Fusionamos <strong className="text-white font-bold">estrategia, diseño y tecnología</strong> para escalar marcas.
         </motion.p>
