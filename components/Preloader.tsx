@@ -1,5 +1,7 @@
 "use client";
-import { motion, Variants } from "framer-motion"; 
+import { motion, Variants, Easing } from "framer-motion"; 
+
+const easeOutExpo: Easing = [0.76, 0, 0.24, 1];
 
 export default function Preloader() {
 
@@ -9,7 +11,7 @@ export default function Preloader() {
       y: "-100vh", 
       transition: { 
         duration: 0.8, 
-        ease: [0.76, 0, 0.24, 1] as [number, number, number, number]
+        ease: easeOutExpo
       } 
     }
   };
