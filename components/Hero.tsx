@@ -1,12 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Marquee from "@/components/Marquee";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[100dvh] flex flex-col justify-center items-center bg-dark overflow-hidden px-4 pt-20 pb-32 md:pb-40">
       
-      {/* Fondo  */}
+      {/* Fondo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[100vh] md:w-[80vw] md:h-[80vh] bg-gradient-to-tr from-criv-blue/20 via-criv-pink/20 to-criv-yellow/20 rounded-full blur-[80px] md:blur-[150px] pointer-events-none opacity-60 md:opacity-100" />
       
       {/* Contenido Principal */}
@@ -17,7 +18,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="font-display font-black uppercase tracking-tighter text-white text-center w-full flex flex-col items-center gap-0 leading-[0.9] md:leading-[0.85]"
         >
-         
+          
           <span className="block text-[12vw] lg:text-[9vw] 2xl:text-[9rem]">
             IMPACTO
           </span>
@@ -26,16 +27,43 @@ export default function Hero() {
             DIGITAL
           </span>
           
-          <span className="block text-[12vw] lg:text-[9vw] 2xl:text-[9rem]">
-            REAL
-          </span>
+          {/* --- BLOQUE REAL + MASCOTA SUPERPUESTA --- */}
+          {/* 1. Quitamos 'gap' para controlar la unión manualmente */}
+          <div className="flex items-center justify-center">
+            
+            {/* z-0 para el texto */}
+            <span className="block text-[12vw] lg:text-[9vw] 2xl:text-[9rem] relative z-0">
+              REAL<span className="text-criv-yellow"></span>
+            </span>
+
+            <motion.div 
+              initial={{ scale: 0, rotate: -20 }}
+              animate={{ scale: 1, rotate: 12 }} // Rotación de 12 grados para que parezca apoyada
+              transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+              
+              // AJUSTES DE SUPERPOSICIÓN:
+              // - w-[22vw]: Aumentamos tamaño en móvil.
+              // - -ml-4 (mobile) / -ml-8 (desktop): MARGEN NEGATIVO. Esto es lo que la encimada.
+              // - z-10: Asegura que la imagen esté ARRIBA de la letra.
+              className="relative z-10 w-[22vw] h-[22vw] lg:w-[11vw] lg:h-[11vw] 2xl:w-[11rem] 2xl:h-[11rem] -ml-4 md:-ml-8 -mt-2 -translate-y-2 md:-translate-y-4"
+            >
+              <Image 
+                src="/criv-criv.png" 
+                alt="Mascota CRIV" 
+                fill 
+                className="object-contain"
+              />
+            </motion.div>
+
+          </div>
+          
+
         </motion.h1>
 
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          
           className="py-6 mt-4 md:mt-6 text-gray-400 text-base sm:text-lg md:text-xl font-body text-center max-w-xs sm:max-w-lg md:max-w-2xl px-4 leading-relaxed"
         >
           Somos CRIV. Fusionamos <strong className="text-white font-bold">estrategia, diseño y tecnología</strong> para escalar marcas.

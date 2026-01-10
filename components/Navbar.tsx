@@ -22,6 +22,7 @@ export default function Navbar() {
             className="object-contain object-left"
           />
         </Link>
+         
 
         {/* Menú Desktop (Se oculta en móvil) */}
         <div className="hidden md:flex gap-8 items-center">
