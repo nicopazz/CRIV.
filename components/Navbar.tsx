@@ -25,15 +25,15 @@ export default function Navbar() {
 
         {/* Menú Desktop (Se oculta en móvil) */}
         <div className="hidden md:flex gap-8 items-center">
-          <Link href="#servicios" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+          <Link href="#servicios" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-yellow">
             Servicios
           </Link>
-          <Link href="#proyectos" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+          <Link href="#proyectos" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-pink">
             Proyectos
           </Link>
           <Link 
             href="#contacto" 
-            className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-white transition-colors"
+            className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-blue"
           >
             HABLEMOS
           </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
               Proyectos
             </Link>
             <Link onClick={toggleMenu} href="#contacto" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-blue">
-              Contacto
+              Hablemos
             </Link>
           </motion.div>
         )}
