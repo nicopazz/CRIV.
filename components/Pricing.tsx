@@ -4,7 +4,7 @@ import { Check, Sparkles } from "lucide-react";
 
 const plans = [
   {
-    name: "Start",
+    name: "CRIV NIDO",
     price: "399",
     description: "Para marcas que inician.",
     features: ["10 Posteos Mensuales", "Estrategia Básica", "Reporte de Métricas"],
@@ -14,7 +14,7 @@ const plans = [
     buttonStyle: "bg-criv-blue text-white hover:bg-white hover:text-black"
   },
   {
-    name: "Growth",
+    name: "MINI CRIV",
     price: "899",
     description: "El favorito de las Startups.",
     features: ["15 Posteos + Reels", "Community Manager", "Landing Page One-Page", "Setup de Ads"],
@@ -24,7 +24,7 @@ const plans = [
     buttonStyle: "bg-criv-yellow text-black hover:bg-white"
   },
   {
-    name: "Scale",
+    name: "CRIV CRIV",
     price: "1,599",
     description: "Dominio total.",
     features: ["Contenido Diario", "Web Full Stack", "Branding Completo", "Consultoría Semanal"],
@@ -36,6 +36,16 @@ const plans = [
 ];
 
 export default function Pricing() {
+  
+  
+  const phoneNumber = "5493816382279"; 
+
+  const handlePlanClick = (planName: string) => {
+    const message = `Hola! Estoy interesado en contratar el plan *${planName}*. Me gustaría recibir más detalles.`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <section id="planes" className="py-24 px-6 bg-black text-white relative overflow-hidden">
       
@@ -62,11 +72,11 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              
               className={`relative p-8 rounded-3xl backdrop-blur-md flex flex-col h-full bg-zinc-900/80 border-2 ${plan.borderColor} ${plan.shadow}`}
             >
               
-              {plan.name === "Growth" && (
+              
+              {plan.name === "MINI CRIV" && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-criv-yellow text-black text-xs font-bold uppercase tracking-widest rounded-full flex items-center gap-2 z-20">
                   <Sparkles className="w-3 h-3" /> Mas conveniente
                 </div>
@@ -81,14 +91,16 @@ export default function Pricing() {
               <ul className="space-y-4 mb-8 flex-1">
                 {plan.features.map((feat, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm font-body text-gray-300">
-                   
                     <Check className={`w-4 h-4 ${plan.color}`} />
                     {feat}
                   </li>
                 ))}
               </ul>
 
-              <button className={`w-full py-4 rounded-xl transition-all duration-300 font-bold uppercase tracking-wide ${plan.buttonStyle}`}>
+              <button 
+                onClick={() => handlePlanClick(plan.name)}
+                className={`w-full py-4 rounded-xl transition-all duration-300 font-bold uppercase tracking-wide ${plan.buttonStyle}`}
+              >
                 Seleccionar
               </button>
             </motion.div>

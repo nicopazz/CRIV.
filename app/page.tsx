@@ -1,25 +1,47 @@
+"use client";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
-import Pricing from "@/components/Pricing"; 
+import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact"; 
-import Footer from "@/components/Footer";   
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader"; // <--- Importamos el Preloader
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      window.scrollTo(0, 0);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="bg-dark min-h-screen text-white selection:bg-criv-yellow selection:text-black">
-      <Navbar />
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
 
-      <Hero />
-      <Services />
-      <Projects />
-      <Pricing />
-      <FAQ />
-      <Contact />
-      
-      <Footer />
+      {/* El contenido se muestra pero queda debajo del Preloader hasta que este sube */}
+      {!isLoading && (
+        <>
+          <Navbar />
+          <Hero />
+          <Services />
+          <Projects />
+          <Pricing />
+          <FAQ />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </main>
   );
 }
