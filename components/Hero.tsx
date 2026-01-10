@@ -27,7 +27,7 @@ export default function Hero() {
             DIGITAL
           </span>
           
-          {/* --- BLOQUE REAL + MASCOTA SUPERPUESTA --- */}
+          
           {/* 1. Quitamos 'gap' para controlar la unión manualmente */}
           <div className="flex items-center justify-center">
             
@@ -41,10 +41,7 @@ export default function Hero() {
               animate={{ scale: 1, rotate: 12 }} // Rotación de 12 grados para que parezca apoyada
               transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
               
-              // AJUSTES DE SUPERPOSICIÓN:
-              // - w-[22vw]: Aumentamos tamaño en móvil.
-              // - -ml-4 (mobile) / -ml-8 (desktop): MARGEN NEGATIVO. Esto es lo que la encimada.
-              // - z-10: Asegura que la imagen esté ARRIBA de la letra.
+              
               className="relative z-10 w-[22vw] h-[22vw] lg:w-[11vw] lg:h-[11vw] 2xl:w-[11rem] 2xl:h-[11rem] -ml-4 md:-ml-8 -mt-2 -translate-y-2 md:-translate-y-4"
             >
               <Image 
