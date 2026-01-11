@@ -109,8 +109,8 @@ export default function Footer() {
         <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-body">
             <p>© {currentYear} CRIV. Todos los derechos reservados.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
+                <a href="/privacidad" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="/terminos" className="hover:text-white transition-colors">Terms & Conditions</a>
             </div>
         </div>
 

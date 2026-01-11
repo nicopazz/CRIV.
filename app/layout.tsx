@@ -16,14 +16,31 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "CRIV. | Agencia Digital",
-  description: "Diseño Web, Branding y Estrategia para marcas que desafían lo convencional.",
-  keywords: ["Agencia Marketing", "Diseño Web", "Branding", "Next.js"],
+  title: "CRIV | Impacto Digital Real",
+  description: "Agencia de diseño web, branding y estrategia digital. Transformamos marcas con tecnología y creatividad de alto nivel.",
+  keywords: ["Agencia Marketing", "Diseño Web", "Branding", "Desarrollo Web", "Argentina", "Growth Partner"],
   icons: {
     icon: "/criv-criv.png", 
+    apple: "/criv-criv.png", 
+  },
+  
+  openGraph: {
+    title: "CRIV | Impacto Digital Real",
+    description: "Transformamos marcas con estrategia, diseño y tecnología.",
+    url: "https://criv.vercel.app/", 
+    siteName: "CRIV Agency",
+    images: [
+      {
+        url: "/logo.png", 
+        width: 1200,
+        height: 630,
+        alt: "CRIV Agency Cover",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
