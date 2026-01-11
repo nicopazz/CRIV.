@@ -27,22 +27,29 @@ export default function Hero() {
             DIGITAL
           </span>
           
-          
-          {/* 1. Quitamos 'gap' para controlar la unión manualmente */}
-          <div className="flex items-center justify-center">
+          {/* --- BLOQUE REAL + MASCOTA (RESPONSIVE AJUSTADO) --- */}
+          <div className="relative flex items-center justify-center">
             
-            {/* z-0 para el texto */}
             <span className="block text-[12vw] lg:text-[9vw] 2xl:text-[9rem] relative z-0">
               REAL<span className="text-criv-yellow"></span>
             </span>
 
+            {/* MASCOTA FLOTANTE CON BREAKPOINTS */}
             <motion.div 
               initial={{ scale: 0, rotate: -20 }}
-              animate={{ scale: 1, rotate: 12 }} // Rotación de 12 grados para que parezca apoyada
+              animate={{ scale: 1, rotate: 12 }} 
               transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
               
-              
-              className="relative z-10 w-[22vw] h-[22vw] lg:w-[11vw] lg:h-[11vw] 2xl:w-[11rem] 2xl:h-[11rem] -ml-4 md:-ml-8 -mt-2 -translate-y-2 md:-translate-y-4"
+              // EXPLICACIÓN DE MEDIDAS:
+              // 1. MOBILE (Base): 'left-[65%]' y 'w-[35vw]' - Posicionamiento y tamaño para pantallas pequeñas
+              // 2. TABLET (md): 'md:left-[75%]' y 'md:w-[25vw]' - Ajuste fino para pantallas medianas
+              // 3. PC (lg): 'lg:left-[82%]' y 'lg:w-[18vw]' - Ajuste fino para pantallas grandes
+              className="absolute 
+                         left-[75%] -top-[110%] w-[38vw] h-[38vw] 
+                         md:left-[75%] md:-top-[35ad%] md:w-[25vw] md:h-[25vw]
+                         lg:left-[82%] lg:-top-[45%] lg:w-[18vw] lg:h-[18vw] 
+                         2xl:w-[18rem] 2xl:h-[18rem] 
+                         z-10 pointer-events-none"
             >
               <Image 
                 src="/criv-criv.png" 
@@ -53,7 +60,7 @@ export default function Hero() {
             </motion.div>
 
           </div>
-          
+         
 
         </motion.h1>
 
