@@ -4,6 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
+import Process from "@/components/Process";
 import Projects from "@/components/Projects";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -35,6 +37,8 @@ export default function Home() {
           <Navbar />
           <Hero />
           <Services />
+          <Testimonials />
+          <Process />
           <Projects />
           <Pricing />
           <FAQ />

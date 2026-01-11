@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, Manrope } from "next/font/google";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const syne = Syne({ 
   subsets: ["latin"], 
@@ -32,6 +33,8 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${syne.variable} ${manrope.variable} bg-dark text-white antialiased`}>
         {children}
+
+        <WhatsAppButton />
       </body>
     </html>
   );
