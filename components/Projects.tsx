@@ -44,7 +44,7 @@ const projects = [
     id: 5,
     title: "RollingVet",
     category: "App Dev",
-    image: "/rollingvet.png",
+    image: "/RollingVet.png",
     size: "md:col-span-1",
     link: "https://rollingvet-tuc.netlify.app/",
   },
