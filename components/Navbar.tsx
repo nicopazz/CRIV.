@@ -29,12 +29,18 @@ export default function Navbar() {
           <Link href="#servicios" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-yellow">
             Servicios
           </Link>
-          <Link href="#proyectos" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-pink">
+          <Link href="#proyectos" className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-orange">
             Proyectos
           </Link>
           <Link 
-            href="#faq" 
+            href="#planes" 
             className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-mint"
+          >
+            Planes
+          </Link>
+          <Link 
+            href="#faq" 
+            className="text-sm font-body uppercase tracking-widest text-gray-400 hover:text-criv-pink"
           >
             Preguntas Frecuentes
           </Link>
@@ -64,10 +70,13 @@ export default function Navbar() {
             <Link onClick={toggleMenu} href="#servicios" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-yellow">
               Servicios
             </Link>
-            <Link onClick={toggleMenu} href="#proyectos" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-pink">
+            <Link onClick={toggleMenu} href="#proyectos" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-orange">
               Proyectos
             </Link>
-             <Link onClick={toggleMenu} href="#faq" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-mint">
+            <Link onClick={toggleMenu} href="#planes" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-mint">
+              Planes
+            </Link>
+             <Link onClick={toggleMenu} href="#faq" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-pink">
               Dudas
             </Link>
             <Link onClick={toggleMenu} href="#contacto" className="text-3xl font-display font-bold text-white uppercase hover:text-criv-blue">

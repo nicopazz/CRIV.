@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowUp } from "lucide-react"; // 1. Importamos ArrowUp
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,13 +19,18 @@ export default function Footer() {
     { name: "Behance", href: "https://behance.net" },
   ];
 
+  // Función para volver arriba
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-black text-white pt-20 md:pt-32 overflow-hidden relative">
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* 1. SECCIÓN SUPERIOR: CTA + LINKS */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20 md:mb-32">
+        {/* Reducimos margen inferior en móvil: mb-12 en vez de mb-20 */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12 md:mb-32">
           
           {/* CTA Principal */}
           <div className="md:col-span-6 flex flex-col justify-between">
@@ -49,8 +54,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links de Navegación */}
-          <div className="md:col-span-3">
+          {/* Links de Navegación (OCULTO EN MÓVIL) */}
+          {/* Agregamos 'hidden md:block' para que desaparezca en celulares */}
+          <div className="md:col-span-3 hidden md:block">
             <h4 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-6">Menu</h4>
             <ul className="space-y-4">
               {links.map((link) => (
@@ -66,7 +72,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links Sociales */}
+          {/* Links Sociales (Se mantiene visible) */}
           <div className="md:col-span-3">
             <h4 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-6">Social</h4>
             <ul className="space-y-4">
@@ -88,9 +94,20 @@ export default function Footer() {
 
         </div>
 
-        {/* 2. SECCIÓN INFERIOR: COPYRIGHT + LEGAL */}
+        {/* BOTÓN VOLVER AL PRINCIPIO (SOLO MÓVIL) */}
+        <div className="md:hidden flex justify-center pb-12">
+            <button 
+                onClick={scrollToTop}
+                className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 hover:text-criv-yellow transition-colors"
+            >
+                <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                Volver al principio
+            </button>
+        </div>
+
+        {/* Copyright */}
         <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-body">
-            <p>© {currentYear} CRIV Agency. Todos los derechos reservados.</p>
+            <p>© {currentYear} CRIV. Todos los derechos reservados.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
@@ -99,10 +116,10 @@ export default function Footer() {
 
       </div>
 
-      {/* 3. FIRMA GIGANTE DE FONDO (Marca de agua) */}
-      <div className="w-full flex justify-center items-end pointer-events-none select-none opacity-20">
-        <h1 className="text-[25vw] leading-none font-display font-black text-zinc-800 tracking-tighter mix-blend-overlay">
-            CRIV
+      {/* Marca de agua ) */}
+      <div className="absolute inset-x-0 bottom-0 md:top-0 md:bottom-auto flex justify-center items-end md:items-start pointer-events-none select-none opacity-20 z-0">
+        <h1 className="text-[25vw] py-5 leading-none font-display font-black text-zinc-800 tracking-tighter mix-blend-overlay">
+            CRIV.
         </h1>
       </div>
 
