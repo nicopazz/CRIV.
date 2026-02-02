@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-dark min-h-screen text-white selection:bg-criv-yellow selection:text-black">
+    <main className="bg-white min-h-screen text-dark selection:bg-criv-yellow selection:text-black">
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>

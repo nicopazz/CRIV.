@@ -50,16 +50,19 @@ const item = {
 
 export default function Services() {
   return (
-    <section id="servicios" className="py-24 px-6 bg-black">
+    // CAMBIO 1: bg-black -> bg-white
+    <section id="servicios" className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         
         <motion.h2 
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-8xl font-display font-bold text-white mb-20 uppercase"
+          // CAMBIO 2: text-white -> text-dark
+          className="text-5xl md:text-8xl font-display font-bold text-dark mb-20 uppercase"
         >
-          Servi<span className="text-gray-600">cios</span>
+          {/* CAMBIO 3: text-gray-600 -> text-gray-300 (Para mantener el efecto "dim" en fondo blanco) */}
+          Servi<span className="text-criv-yellow">cios</span>
         </motion.h2>
 
         <motion.div 
@@ -73,26 +76,33 @@ export default function Services() {
             <motion.div 
               key={index}
               variants={item}
-              className={`group relative p-8 rounded-[2rem] border border-white/10 bg-zinc-900/20 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${service.borderColor} ${service.bgHover} ${service.shadow}`}
+              // CAMBIO 4: 
+              // - border-white/10 -> border-gray-200
+              // - bg-zinc-900/20 -> bg-white
+              className={`group relative p-8 rounded-[2rem] border border-gray-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 ${service.borderColor} ${service.bgHover} ${service.shadow}`}
             >
               <div className="flex justify-between items-start mb-6">
-                <div className={`p-4 rounded-full bg-white/5 w-fit ${service.color} ring-1 ring-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                {/* CAMBIO 5: bg-white/5 -> bg-gray-100, ring-white/10 -> ring-gray-200 */}
+                <div className={`p-4 rounded-full bg-gray-100 w-fit ${service.color} ring-1 ring-gray-200 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
                   {service.icon}
                 </div>
                 <ArrowUpRight className={`w-6 h-6 ${service.color} opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300`} />
               </div>
 
-              <h3 className="text-3xl font-display font-bold text-white mb-4">
+              {/* CAMBIO 6: text-white -> text-dark */}
+              <h3 className="text-3xl font-display font-bold text-dark mb-4">
                 {service.title}
               </h3>
 
-              <p className="text-gray-400 font-body leading-relaxed mb-8">
+              {/* CAMBIO 7: text-gray-400 -> text-gray-600 */}
+              <p className="text-gray-600 font-body leading-relaxed mb-8">
                 {service.description}
               </p>
 
               <ul className="space-y-3">
                 {service.tags.map((tag, i) => (
-                  <li key={i} className="flex items-center text-sm font-bold font-body text-gray-300">
+                  // CAMBIO 8: text-gray-300 -> text-gray-500
+                  <li key={i} className="flex items-center text-sm font-bold font-body text-gray-500">
                     <span className={`w-2 h-2 rounded-full mr-3 ${service.color.replace('text-', 'bg-')}`} />
                     {tag}
                   </li>

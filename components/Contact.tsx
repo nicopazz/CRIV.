@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react"; // Quitamos MessageCircle
+import { ArrowUpRight } from "lucide-react"; 
 
 export default function Contact() {
   const [selectedInterest, setSelectedInterest] = useState<string | null>(null);
@@ -21,7 +21,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-16 md:py-24 px-4 md:px-6 bg-black text-white">
+    // CAMBIO 1: bg-black -> bg-white, text-white -> text-dark
+    <section id="contacto" className="py-16 md:py-24 px-4 md:px-6 bg-white text-dark">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
           <motion.h2 
@@ -30,19 +31,21 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-4xl sm:text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter mb-4"
           >
-            Hablemos<span className="text-criv-blue"></span>
+            Hable<span className="text-criv-blue">mos</span>
           </motion.h2>
-          <p className="text-lg md:text-xl text-gray-400 font-body px-4">
+          <p className="text-lg md:text-xl text-gray-600 font-body px-4">
             Contacto directo. Sin formularios de espera.
           </p>
         </div>
 
         {/* Tarjeta del Formulario */}
-        <div className="space-y-8 md:space-y-12 bg-zinc-900/30 p-6 sm:p-8 md:p-12 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 backdrop-blur-sm">
+        {/* CAMBIO 3: Estilos de tarjeta para modo claro (blanca con sombra) */}
+        <div className="space-y-8 md:space-y-12 bg-white p-6 sm:p-8 md:p-12 rounded-[1.5rem] md:rounded-[2rem] border border-gray-200 shadow-xl backdrop-blur-sm">
           
           {/* 1. Selección de Interés */}
           <div>
-            <label className="block text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 md:mb-6">
+            {/* CAMBIO 4: text-gray-500 -> text-gray-600 */}
+            <label className="block text-xs md:text-sm font-bold text-gray-600 uppercase tracking-widest mb-4 md:mb-6">
               ¿Qué estás buscando?
             </label>
             <div className="flex flex-wrap gap-3 md:gap-4">
@@ -50,10 +53,13 @@ export default function Contact() {
                 <button
                   key={item}
                   onClick={() => setSelectedInterest(item)}
+                  // CAMBIO 5: Lógica de colores para botones
+                  // Activo: bg-black text-white (fuerte contraste)
+                  // Inactivo: border-gray-300 text-gray-500 hover:border-black hover:text-black
                   className={`px-4 py-2 md:px-6 md:py-3 rounded-full border text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
                     selectedInterest === item 
-                      ? "bg-white text-black border-white scale-105" 
-                      : "border-white/20 text-gray-400 hover:border-white hover:text-white"
+                      ? "bg-black text-white border-black scale-105 shadow-md" 
+                      : "border-gray-200 text-gray-500 hover:border-black hover:text-black"
                   }`}
                 >
                   {item}
@@ -64,7 +70,7 @@ export default function Contact() {
 
           {/* 2. Input Nombre */}
           <div className="group">
-            <label className="block text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">
+            <label className="block text-xs md:text-sm font-bold text-gray-600 uppercase tracking-widest mb-2">
               Tu nombre (Opcional)
             </label>
             <input 
@@ -72,7 +78,11 @@ export default function Contact() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Ej: Nicolás" 
-              className="w-full bg-transparent border-b border-white/20 py-3 md:py-4 text-lg md:text-2xl font-display focus:border-criv-yellow focus:outline-none transition-colors placeholder:text-zinc-800" 
+              // CAMBIO 6: Estilos de input para fondo blanco
+              // border-white/20 -> border-gray-300
+              // placeholder:text-zinc-800 -> placeholder:text-gray-300
+              // text-dark (implícito por el padre)
+              className="w-full bg-transparent border-b border-gray-300 py-3 md:py-4 text-lg md:text-2xl font-display focus:border-black focus:outline-none transition-colors placeholder:text-gray-300" 
             />
           </div>
 
@@ -95,7 +105,8 @@ export default function Contact() {
               
               <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform opacity-70 flex-shrink-0" />
             </button>
-            <p className="text-center text-gray-500 text-[10px] md:text-xs mt-4 font-body uppercase tracking-wider">
+            {/* CAMBIO 7: text-gray-500 -> text-gray-400 */}
+            <p className="text-center text-gray-400 text-[10px] md:text-xs mt-4 font-body uppercase tracking-wider">
               Respuesta promedio: Menos de 15 minutos
             </p>
           </div>

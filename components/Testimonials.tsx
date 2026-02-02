@@ -25,7 +25,8 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 bg-black relative overflow-hidden">
+    // CAMBIO 1: bg-black -> bg-white
+    <section className="py-24 px-6 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Título de la Sección */}
@@ -33,10 +34,12 @@ export default function Testimonials() {
            initial={{ opacity: 0, x: -30 }}
            whileInView={{ opacity: 1, x: 0 }}
            viewport={{ once: true }}
-           className="text-5xl md:text-8xl font-display font-bold text-white mb-20 uppercase"
+           // CAMBIO 2: text-white -> text-dark
+           className="text-5xl md:text-8xl font-display font-bold text-dark mb-20 uppercase"
         >
            Lo que dicen <br />
-           <span className="text-gray-700">de nosotros</span>
+           {/* CAMBIO 3: text-gray-700 -> text-gray-300 (Gris claro para contraste sutil) */}
+           <span className="text-criv-yellow">de nosotros</span>
         </motion.h2>
 
         {/* Grilla de Testimonios */}
@@ -48,19 +51,25 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="group relative p-8 rounded-[2rem] border border-white/10 bg-zinc-900/20 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-white/20"
+              // CAMBIO 4: 
+              // - border-white/10 -> border-gray-200
+              // - bg-zinc-900/20 -> bg-white
+              // - hover:border-white/20 -> hover:border-gray-300
+              className="group relative p-8 rounded-[2rem] border border-gray-200 bg-white backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gray-300"
             >
               {/* Icono Comilla */}
               <Quote className={`w-10 h-10 mb-6 opacity-50 ${review.color}`} />
               
               {/* Texto del Review */}
-              <p className="text-gray-300 font-body text-lg mb-8 leading-relaxed">
+              {/* CAMBIO 5: text-gray-300 -> text-gray-600 */}
+              <p className="text-gray-600 font-body text-lg mb-8 leading-relaxed">
                 &quot;{review.text}&quot;
               </p>
               
               {/* Datos del Cliente */}
               <div>
-                <h4 className="font-bold text-white uppercase tracking-wider font-display text-xl">
+                {/* CAMBIO 6: text-white -> text-dark */}
+                <h4 className="font-bold text-dark uppercase tracking-wider font-display text-xl">
                   {review.client}
                 </h4>
                 <span className={`text-sm font-bold uppercase ${review.color}`}>

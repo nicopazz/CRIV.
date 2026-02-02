@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${syne.variable} ${manrope.variable} bg-dark text-white antialiased`}
+        className={`${syne.variable} ${manrope.variable} bg-white text-dark antialiased`}
       >
         {children}
 

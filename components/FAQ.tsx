@@ -30,18 +30,20 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-6 bg-black text-white relative overflow-hidden">
+    // CAMBIO 1: bg-black -> bg-white, text-white -> text-dark
+    <section id="faq" className="py-24 px-6 bg-white text-dark relative overflow-hidden">
        
-       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-criv-blue/10 rounded-full blur-[120px] pointer-events-none" />
+       {/* Blur decorativo más sutil para fondo blanco */}
+       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-criv-blue/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-7xl font-display font-bold uppercase mb-16 text-center"
+          className="text-4xl md:text-7xl font-display font-bold uppercase mb-16 text-center text-dark"
         >
-          Preguntas <span className="text-gray-600">Frecuentes</span>
+          Preguntas <span className="text-criv-pink">Frecuentes</span>
         </motion.h2>
 
         <div className="space-y-4">
@@ -55,20 +57,26 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                // CAMBIO 2: Estilos de la tarjeta en modo claro
+                // Inactivo: border-gray-200, bg-white
+                // Activo: mantiene el border-criv-yellow pero con fondo blanco
                 className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                   isOpen 
-                    ? "border-criv-yellow bg-zinc-900/50 shadow-[0_0_20px_rgba(252,211,77,0.1)]" 
-                    : "border-white/10 bg-zinc-900/20 hover:border-white/30"
+                    ? "border-criv-yellow bg-white shadow-[0_0_20px_rgba(252,211,77,0.1)]" 
+                    : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left"
                 >
-                  <span className={`text-lg md:text-xl font-bold font-display uppercase tracking-wide transition-colors ${isOpen ? "text-criv-yellow" : "text-white"}`}>
+                  {/* CAMBIO 3: text-white -> text-dark (cuando no está activo) */}
+                  <span className={`text-lg md:text-xl font-bold font-display uppercase tracking-wide transition-colors ${isOpen ? "text-criv-yellow" : "text-dark"}`}>
                     {faq.question}
                   </span>
-                  <div className={`p-2 rounded-full border transition-all ${isOpen ? "bg-criv-yellow text-black border-criv-yellow" : "border-white/20 text-white"}`}>
+                  
+                  {/* CAMBIO 4: border-white/20 -> border-gray-200, text-white -> text-dark */}
+                  <div className={`p-2 rounded-full border transition-all ${isOpen ? "bg-criv-yellow text-black border-criv-yellow" : "border-gray-200 text-dark"}`}>
                     {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                 </button>
@@ -81,7 +89,8 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-6 md:px-8 pb-8 text-gray-400 font-body leading-relaxed border-t border-white/5 pt-4">
+                      {/* CAMBIO 5: text-gray-400 -> text-gray-600, border-white/5 -> border-gray-100 */}
+                      <div className="px-6 md:px-8 pb-8 text-gray-600 font-body leading-relaxed border-t border-gray-100 pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>
